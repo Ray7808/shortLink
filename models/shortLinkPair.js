@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const shortLinkSchema = new mongoose.Schema({
+const shortLinkPairSchema = new mongoose.Schema({
     inputLink: {
         type: String,
         required: true,
@@ -11,4 +11,4 @@ const shortLinkSchema = new mongoose.Schema({
     },
 })
 
-module.exports = mongoose.model("shortLink", shortLinkSchema)
+module.exports = mongoose.model("shortLinkPair", shortLinkPairSchema)

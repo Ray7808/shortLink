@@ -11,7 +11,7 @@ function shortLink() {
     let outputURL = ""
 
     //將所有字串用split及concat變成一個包含各個字元的array
-    let URLBase = ""
+    let URLBase = []
     URLBase = URLBase.concat(upperCaseLetters.split(""))
     URLBase = URLBase.concat(lowerCaseLetters.split(""))
     URLBase = URLBase.concat(numbers.split(""))
