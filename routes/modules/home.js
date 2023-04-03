@@ -26,21 +26,28 @@ router.get("/success/:shortWords", (req, res) => {
     res.render("success", { initialURL: initialURL, shortWords: shortWords })
 })
 router.post("/shortLink", (req, res) => {
-    // 先確認資料庫有沒有對應的URL，沒有就使用shortLink隨機產生新的shortURL(待處理)
+    // 先確認資料庫有沒有對應的URL，沒有就使用shortLink隨機產生新的shortURL
     const inputURL = req.body.inputURL
     let outputURL = ""
+    let shortWords = ""
+
     shortLinkPair
         .find({ inputLink: inputURL })
         .lean()
         .then((outputLink) => {
             outputURL = outputLink
-            let shortWords = ""
+
             if (outputURL.length) {
                 console.log(`You find URL inside mongoBD`)
                 shortWords = outputURL[0].outputLink
                 res.redirect(`/success/${shortWords}`)
             } else {
                 console.log(`You don't find URL inside mongoBD and you should generate a new one`)
+                shortWords = shortLink()
+                return shortLinkPair
+                    .create({ inputLink: inputURL, outputLink: shortWords })
+                    .then(() => res.redirect(`/success/${shortWords}`))
+                    .catch((error) => console.log(error))
             }
         })
         .catch((error) => console.log(error))
