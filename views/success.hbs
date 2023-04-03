@@ -9,19 +9,18 @@
 </nav>
 
 {{! Main }}
-<main class="container">
-    <div class="text-center main__image my-4">
+<div class="container">
+    <div class="text-center my-4" style="width: auto;height: 30vw;">
         <h2>URL Shortener</h2>
-        <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png" alt="Logo" class="rounded" />
+        <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png" alt="Logo" class="rounded" style="width: 30%;" />
     </div>
     <div class="pt-3">
-        <h2>This is success page</h2>
+        <h2>Success! Please use this link:</h2>
         <div class="mb-3">
-            <label for="inputURL" class="form-label">Input URL</label>
-            <input type="text" class="form-control" id="inputURL" placeholder="Input URL Here" />
+            <a href="{{initialURL}}{{shortWords}}" class="display-5 copyContent" style="text-decoration:none;">{{initialURL}}{{shortWords}}</a>
         </div>
         <div class="position-relative">
-            <button type="text" class="btn btn-primary position-absolute end-0">COPY</button>
+            <button type="text" class="btn btn-primary position-absolute end-0 copyButton">COPY</button>
         </div>
     </div>
-</main>
+</div>
