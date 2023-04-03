@@ -1,26 +1,47 @@
 {{! Navbar }}
-<nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-            <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top" />
+<nav class='navbar bg-body-tertiary'>
+    <div class='container-fluid'>
+        <a class='navbar-brand' href='/'>
+            <img
+                src='https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png'
+                alt='Logo'
+                width='30'
+                height='30'
+                class='d-inline-block align-text-top'
+            />
             URL Shortener
         </a>
     </div>
 </nav>
 
 {{! Main }}
-<div class="container">
-    <div class="text-center my-4" style="width: auto;height: 30vw;">
+<div class='container'>
+    <div class='text-center my-4' style='width: auto;height: 30vw;'>
         <h2>URL Shortener</h2>
-        <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png" alt="Logo" class="rounded" style="width: 30%;" />
+        <img
+            src='https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png'
+            alt='Logo'
+            class='rounded'
+            style='width: 30%;'
+        />
     </div>
-    <div class="pt-3">
+    <div class='pt-3'>
         <h2>Success! Please use this link:</h2>
-        <div class="mb-3">
-            <a href="{{initialURL}}{{shortWords}}" class="display-5 copyContent" style="text-decoration:none;">{{initialURL}}{{shortWords}}</a>
+        <div class='mb-3'>
+            <a href='{{initialURL}}{{shortWords}}' class='display-5' id='copyContent' style='text-decoration:none;'>{{initialURL}}{{shortWords}}</a>
         </div>
-        <div class="position-relative">
-            <button type="text" class="btn btn-primary position-absolute end-0 copyButton">COPY</button>
+        <div class='position-relative'>
+            <button type='text' class='btn btn-primary position-absolute end-0 copyButton' onclick='copyURL()'>COPY</button>
         </div>
     </div>
 </div>
+
+<script>
+    //新增copyURL function來複製短網址 
+    function copyURL(){ 
+        const copyButton = document.querySelector(".copyButton")
+        const copyContent = document.querySelector("#copyContent").textContent
+        navigator.clipboard.writeText(copyContent) // copy該內容
+        copyButton.textContent = "Copied!" 
+    }
+</script>
