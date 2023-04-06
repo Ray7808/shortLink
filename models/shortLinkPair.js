@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 
 const shortLinkPairSchema = new mongoose.Schema({
     inputLink: {
@@ -11,4 +11,4 @@ const shortLinkPairSchema = new mongoose.Schema({
     },
 })
 
-module.exports = mongoose.model("shortLinkPair", shortLinkPairSchema)
+module.exports = mongoose.model('shortLinkPair', shortLinkPairSchema)
