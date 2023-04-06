@@ -1,27 +1,38 @@
 {{! Navbar }}
-<nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-            <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top" />
+<nav class='navbar bg-body-tertiary'>
+    <div class='container-fluid'>
+        <a class='navbar-brand' href='/'>
+            <img
+                src='https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png'
+                alt='Logo'
+                width='30'
+                height='30'
+                class='d-inline-block align-text-top'
+            />
             URL Shortener
         </a>
     </div>
 </nav>
 
 {{! Main }}
-<main class="container">
-    <div class="text-center my-4" style="width: auto;height: 30vw;">
+<main class='container'>
+    <div class='text-center my-4' style='width: auto;height: 30vw;'>
         <h2>URL Shortener</h2>
-        <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png" alt="Logo" class="rounded" style="width: 30%;" />
+        <img
+            src='https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png'
+            alt='Logo'
+            class='rounded'
+            style='width: 30%;'
+        />
     </div>
-    <div class="pt-3">
-        <form action="/shortLink" method="POST">
-            <div class="mb-3">
-                <label for="inputURL" class="form-label">Input URL</label>
-                <input type="text" class="form-control" id="inputURL" name="inputURL" placeholder="Input URL Here" required />
+    <div class='pt-3'>
+        <form action='/shortLink' method='POST'>
+            <div class='mb-3'>
+                <label for='inputURL' class='form-label'>Input URL</label>
+                <input type='text' class='form-control' id='inputURL' name='inputURL' placeholder='Input URL Here' required />
             </div>
-            <div class="position-relative">
-                <button type="submit" class="btn btn-primary position-absolute end-0">SUBMIT</button>
+            <div class='position-relative'>
+                <button type='submit' class='btn btn-primary position-absolute end-0'>SUBMIT</button>
             </div>
         </form>
     </div>
