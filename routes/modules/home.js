@@ -1,8 +1,8 @@
-const express = require('express')
-const router = express.Router()
-const shortLinkPair = require('../../models/shortLinkPair')
-const shortLink = require('../../shortLink')
-const initialURL = 'http://localhost:3000/' // 之後要修改網址可以只改這行
+const express = require('express');
+const router = express.Router();
+const shortLinkPair = require('../../models/shortLinkPair');
+const shortLink = require('../../shortLink');
+const initialURL = 'http://localhost:3000/'; // 之後要修改網址可以只改這行
 
 router.get('/', (req, res) => {
     // 顯示頁面供使用者輸入網址
